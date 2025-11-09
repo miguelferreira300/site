@@ -78,7 +78,7 @@
           <li><strong>Memória:</strong> 4 GB RAM</li>
           <li><strong>Espaço em Disco:</strong> 500 MB</li>
         </ul>
-        <a href="MathChampionship-1.0-win.zip" class="btn btn-success btn-lg" style="margin-top: 25px;">
+        <a href="https://lucas-henrique-rodeiro.itch.io/math" class="btn btn-success btn-lg" style="margin-top: 25px;">
           <span class="glyphicon glyphicon-download-alt"></span> Baixar o Jogo
         </a>
       </div>
@@ -86,7 +86,7 @@
       <div class="col-sm-10 col-sm-offset-1 text-center">
         <p class="lead">
           O jogo é recomendado para estudantes, com o objetivo de desafiar o conhecimento do jogador. <br>
-          O protagonista é um aluno do primeiro ano do ensino médio, apaixonado por desafios e lógica. Quando descobre o Campeonato Anual de Matemática, decide participar para provar seu valor. Enfrentando rivais mais experientes, ele avança fase após fase com inteligência e determinação. Seu objetivo é simples, mas ambicioso: chegar à final e se tornar o campeão, mostrando que talento e esforço superam qualquer diferença desérie.
+          O protagonista é um aluno do primeiro ano do ensino médio, apaixonado por desafios e lógica. Quando descobre o Campeonato Anual de Matemática, decide participar para provar seu valor. Enfrentando rivais mais experientes, ele avança fase após fase com inteligência e determinação. Seu objetivo é simples, mas ambicioso: chegar à final e se tornar o campeão, mostrando que talento e esforço superam qualquer diferença desérie.
         </p>
       </div>
     </div> 
@@ -362,7 +362,7 @@ label inicio:
     $ nome = nome.strip()
     if not nome:
         $ nome = "Alex"
-    p "Beleza, [nome]! Vamos para a competição de matemática."
+    p "Beleza, [nome]! Vamos para a competição de matemática."
 <hr>
 #Função que gera as perguntas de matemática (lógica + parâmetro)
 init python:
@@ -390,7 +390,7 @@ init python:
 
         alts = list(alternativas)
         random.shuffle(alts)
-        return questao, val, alts
+        return questao, val, alts
         <hr>
         #Minigame da Fase 1 – lógica principal (for + if)
 label mg_fase1_aritmetica:
@@ -407,7 +407,7 @@ label mg_fase1_aritmetica:
     if score >= vitoria_necessaria:
         return True
     else:
-        return False
+        return False
     <hr>
     #Ligação com a história – vitória ou derrota (if _return)
 label duelo_caio:
@@ -433,7 +433,7 @@ screen quiz_mc_screen(questao, alternativas, tempo=10):
         "tempo_restante",
         tempo_restante - 1 if tempo_restante > 0 else 0
     )
-    timer tempo action Return(None)
+    timer tempo action Return(None)
     <hr>
     #Função da calculadora/rascunho da fase final
 init python:
@@ -444,9 +444,9 @@ init python:
         txt = txt.replace("x", "").replace("X", "")
         txt = txt.replace(",", ".")
         try:
-            return str(eval(txt, {"_builtins_": None}, {}))
+            return str(eval(txt, {"builtins": None}, {}))
         except Exception:
-            return "erro"
+            return "erro"
          <hr>
          Parte da tela da fase final com rascunho/calculadora
 screen quiz_final_screen(questao, alternativas, tempo=40):
@@ -472,7 +472,7 @@ screen quiz_final_screen(questao, alternativas, tempo=40):
                 text "1)"
                 input value VariableInputValue("calc_linha1") length 28
                 textbutton "=" action Function(calc_l1)
-                text "[calc_res1]"
+                text "[calc_res1]"
       </code></pre>
       
     </div>
