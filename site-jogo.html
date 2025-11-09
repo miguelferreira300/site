@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Site do jogo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .thumbnail img.gallery-thumb {
+    height: 200px;     /* <<< Você pode mudar este valor (ex: 250px) */
+    width: 100%;      /* Ocupa a largura da 'thumbnail' */
+    object-fit: contain; /* Recorta a imagem para caber sem distorcer */
+  }
+
+  .codigo-bloco {
+    background-color: #2b2b2b; /* Fundo escuro */
+    color: #f8f8f2;         /* Texto claro */
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;       /* Código é melhor alinhado à esquerda */
+    font-family: Consolas, "Courier New", monospace; /* Fonte monoespaçada */
+    overflow-x: auto;       /* Adiciona barra de rolagem se o código for muito largo */
+  }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Math Championship</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div> 
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container">
+    
+    <div class="row">
+      
+      <div class="col-sm-6">
+        <img src="MC.png" alt="Logo Math Championship - Desafio Colegial" class="img-responsive center-block" style="max-width: 500px;">
+      </div>
+      
+      <div class="col-sm-6">
+        <h2>Requisitos Mínimos:</h2>
+        <ul class="lead">
+          <li><strong>Sistema:</strong> Windows 10/11</li>
+          <li><strong>Processador:</strong> Intel Core i3 ou AMD Ryzen 3</li>
+          <li><strong>Memória:</strong> 4 GB RAM</li>
+          <li><strong>Espaço em Disco:</strong> 500 MB</li>
+        </ul>
+        <a href="MathChampionship-1.0-win.zip" class="btn btn-success btn-lg" style="margin-top: 25px;">
+          <span class="glyphicon glyphicon-download-alt"></span> Baixar o Jogo
+        </a>
+      </div>
+    </div> <hr> <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 text-center">
+        <p class="lead">
+          O jogo é recomendado para estudantes, com o objetivo de desafiar o conhecimento do jogador. <br>
+          O protagonista é um aluno do primeiro ano do ensino médio, apaixonado por desafios e lógica. Quando descobre o Campeonato Anual de Matemática, decide participar para provar seu valor. Enfrentando rivais mais experientes, ele avança fase após fase com inteligência e determinação. Seu objetivo é simples, mas ambicioso: chegar à final e se tornar o campeão, mostrando que talento e esforço superam qualquer diferença desérie.
+        </p>
+      </div>
+    </div> 
+  </div> 
+</div>
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>Controles do Jogo</h3><br>
+  
+  <div class="row">
+    
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="controles-mouse.jpg" alt="Controle Avançar" class="img-responsive">
+        <div class="caption">
+          <p>Controle do jogo para o mouse.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="controles-teclado.jpg" alt="Controle Escolher" class="img-responsive">
+        <div class="caption">
+          <p>Controle do jogo para o teclado.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="controles-gamepad.jpg" alt="Controle Histórico" class="img-responsive">
+        <div class="caption">
+          <p>Controle do jogo para o gamepad.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><br><br>
+
+<h1 class="text-center">Sobre o jogo</h1> <br><br>
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>Storyboard</h3><br>
+  
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      
+      <p class="lead">
+        Este é um exemplo do storyboard que usamos para planejar as 
+        cenas e interações do jogo.
+      </p>
+
+      <img src="STORYBOARD.jpg" alt="Storyboard do Jogo" class="img-responsive img-thumbnail" style="margin: 0 auto; max-width: 800px;">
+      
+    </div>
+  </div>
+</div><br>
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>Gameplay</h3><br>
+  
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      
+      <p class="lead">
+        A gameplay inteira do jogo
+      </p>
+
+      <video width="600" controls>
+  <source src="Math Championship video.mp4" type="video/mp4">
+  
+  Seu navegador não suporta o elemento de vídeo.
+</video>
+      
+    </div>
+  </div>
+</div><br>
+    
+<div class="container-fluid bg-3 text-center">    
+  <h3>Personagens Principais</h3><br>
+  
+  <div class="row">
+    
+    <div class="col-sm-3">
+      <img src="bully.png" class="img-responsive img-circle" 
+           style="width:100%; max-width: 300px; margin: 0 auto; border: 6px solid #28a745;" alt="Personagem 1">
+      <p>Caio, o garoto popular da escola.</p>
+    </div>
+    
+    <div class="col-sm-3"> 
+      <img src="amigo.png" class="img-responsive img-circle" 
+           style="width:100%; max-width: 300px; margin: 0 auto; border: 6px solid #ffe607;" alt="Personagem 2">
+      <p>O melhor amigo do protagonista</p>
+    </div>
+    
+    <div class="col-sm-3"> 
+      <img src="veterano.png" class="img-responsive img-circle" 
+           style="width:100%; max-width: 300px; margin: 0 auto; border: 6px solid #ff7b00;" alt="Personagem 3">
+      <p>Victor, é o veterano do protagonista</p>
+    </div>
+
+    <div class="col-sm-3"> 
+          <img src="nerd.png" class="img-responsive img-circle" 
+           style="width:100%; max-width: 300px; margin: 0 auto; border: 6px solid #ff0000;" alt="Personagem 4">
+      <p>Jorge, é o nerd da escola.</p>
+    </div>
+  
+  </div>
+
+</div><br>
+
+<hr style="height: 5px; background-color: gray;">
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>Imagens e músicas usadas no jogo</h3><br>
+  
+  <h4>Imagens</h4>
+  
+  <div class="row">
+    
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="sala.jpg" alt="Cenário da Sala de Aula" class="gallery-thumb">
+        <div class="caption">
+          <p>Sala de aula principal</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-4"> 
+      <div class="thumbnail">
+        <img src="quarto.jpg" alt="Cenário do Quarto" class="gallery-thumb">
+        <div class="caption">
+          <p>Quarto do protagonista</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-4"> 
+      <div class="thumbnail">
+        <img src="quadro.jpg" alt="Tela de Batalha" class="gallery-thumb">
+        <div class="caption">
+          <p>Tela de desafio (quadro)</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="row"> 
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="corredor.jpg" alt="Cenário do Corredor" class="gallery-thumb">
+        <div class="caption">
+          <p>Corredor da escola</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-4"> 
+      <div class="thumbnail">
+        <img src="frente escola.jpg" alt="Cenário da Frente da Escola" class="gallery-thumb">
+        <div class="caption">
+          <p>Fachada da escola</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-4"> 
+      <div class="thumbnail">
+        <img src="plateia.png" alt="Tela de Batalha Vazia" class="gallery-thumb">
+        <div class="caption">
+          <p>Plateia no final do jogo</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br> <h4>Músicas</h4>
+  <div class="row">
+
+    <div class="col-sm-3">
+      <audio controls style="width: 100%;">
+        <source src="musica 1.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+      <p>Música da primeira fase</p>
+    </div>
+
+    <div class="col-sm-3">
+      <audio controls style="width: 100%;">
+        <source src="musica 2.mp3" type="audio/wav">
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+      <p>Musica da segunda fase</p>
+    </div>
+
+    <div class="col-sm-3">
+      <audio controls style="width: 100%;">
+        <source src="musica 3.mp3" type="audio/wav">
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+      <p>Musica da terceira fase</p>
+    </div>
+
+    <div class="col-sm-3">
+      <audio controls style="width: 100%;">
+        <source src="musica 4.mp3" type="audio/wav">
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+      <p>Musica da quarta fase</p>
+    </div>
+  </div>
+
+  <hr> <div class="row">
+    <div class="col-sm-12">
+      <p class="lead">Gostou? Baixe o pacote completo com todos os assets!</p>
+      <a href="coisas usadas no jogo.zip" class="btn btn-primary btn-lg" style="margin-top: 15px;">
+        <span class="glyphicon glyphicon-download-alt"></span> Baixar Pacote de Assets (.zip)
+      </a>
+    </div>
+  </div>
+
+</div><br>
+
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>Linguagem de Desenvolvimento</h3><br>
+  
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      
+      
+      <p class="lead" style="text-align: left; text-indent: 25px;">
+         O Math Championship foi desenvolvido usando a linguagem Python
+        em conjunto com a engine de jogos Ren'Py. 
+        <br>Python é uma linguagem de programação versátil e poderosa, famosa por sua sintaxe clara e por ser fácil de aprender. Ela é a base da Ren'Py, uma engine de jogo gratuita e de código aberto, ideal para criar romances visuais (visual novels) e jogos narrativos.
+      </p>
+      
+    </div>
+  </div>
+</div><br>
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>Códigos do Jogo</h3><br>
+  
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      
+      <p class="lead">
+        Aqui está alguns exemplos dos códigos utilizados no jogo e sua função 
+        e escolhas foi programada em Python e Ren'Py.
+      </p>
+
+      <pre class="codigo-bloco"><code>
+#Definição dos personagens (estrutura básica da visual novel)
+define p = Character("[nome]", dynamic=True)
+define c = Character("Caio")
+define f = Character("Amigo")
+define v = Character("Victor")
+define l = Character("Jorge")
+define t = Character("Professor")
+<hr>
+#Entrada do nome do jogador (input + if)
+label inicio:
+    $ nome = renpy.input("Qual é o seu nome?", default="Alex")
+    $ nome = nome.strip()
+    if not nome:
+        $ nome = "Alex"
+    p "Beleza, [nome]! Vamos para a competição de matemática."
+<hr>
+#Função que gera as perguntas de matemática (lógica + parâmetro)
+init python:
+    import random
+
+    def gerar_aritmetica(nivel=1):
+        ops = ["+", "-", "×"]
+        a = random.randint(1, 9)
+        b = random.randint(1, 9)
+        op = random.choice(ops)
+
+        if op == "+":
+            val = a + b
+        elif op == "-":
+            if a < b:
+                a, b = b, a
+            val = a - b
+        else:
+            val = a * b
+
+        questao = f"{a} {op} {b} = ?"
+        alternativas = {val}
+        while len(alternativas) < 4:
+            alternativas.add(val + random.randint(-7, 7))
+
+        alts = list(alternativas)
+        random.shuffle(alts)
+        return questao, val, alts
+        <hr>
+        #Minigame da Fase 1 – lógica principal (for + if)
+label mg_fase1_aritmetica:
+    $ score = 0
+    $ rounds_total = 5
+    $ vitoria_necessaria = 3
+    $ tempo_por_questao = 10
+    python:
+        for i in range(rounds_total):
+            q, correta, alts = gerar_aritmetica()
+            resp = renpy.call_screen("quiz_mc_screen", q, alts, tempo_por_questao)
+            if resp == correta:
+                score += 1
+    if score >= vitoria_necessaria:
+        return True
+    else:
+        return False
+    <hr>
+    #Ligação com a história – vitória ou derrota (if _return)
+label duelo_caio:
+    call mg_fase1_aritmetica
+    if _return:
+        jump vitoria_caio
+    else:
+        jump derrota_caio_menu
+      <hr>
+    #Tela do quiz (screen com alternativas e tempo)
+screen quiz_mc_screen(questao, alternativas, tempo=10):
+    default tempo_restante = tempo
+
+    frame:
+        vbox:
+            text "[questao]" size 40
+            text "Tempo: [tempo_restante] segundos" size 22
+
+            for alt in alternativas:
+                textbutton str(alt) action Return(alt)
+
+    timer 1.0 repeat True action SetScreenVariable(
+        "tempo_restante",
+        tempo_restante - 1 if tempo_restante > 0 else 0
+    )
+    timer tempo action Return(None)
+    <hr>
+    #Função da calculadora/rascunho da fase final
+init python:
+    def calc_expr(txt):
+        txt = txt.strip()
+        if not txt:
+            return ""
+        txt = txt.replace("x", "").replace("X", "")
+        txt = txt.replace(",", ".")
+        try:
+            return str(eval(txt, {"_builtins_": None}, {}))
+        except Exception:
+            return "erro"
+         <hr>
+         Parte da tela da fase final com rascunho/calculadora
+screen quiz_final_screen(questao, alternativas, tempo=40):
+    modal True
+    default restante_final = tempo
+
+    frame:
+        xalign 0.5
+        yalign 0.0
+        vbox:
+            text "QUESTÃO FINAL" size 50
+            text "[questao]" size 36
+
+    frame:
+        xpos 20
+        ypos 340
+        xsize 1240
+        ysize 320
+        vbox:
+            text "Rascunho / calculadora" size 20
+
+            hbox:
+                text "1)"
+                input value VariableInputValue("calc_linha1") length 28
+                textbutton "=" action Function(calc_l1)
+                text "[calc_res1]"
+      </code></pre>
+      
+    </div>
+  </div>
+</div><br>
+
+<footer class="container-fluid text-center">
+  <p style="font-size: 16px;"><strong>Desenvolvido por:</strong></p>
+  <p>
+    Arthur Egidio Vieira Herruzo, Desenvolvimento do site <br>
+    Lucas Henrique Rodeiro da Silva, Desenvolvimento do jogo <br>
+    Miguel Ferreira da Silva, Roteiro e planejamento do projeto <br>
+  </p>
+  <p style="margin-top: 15px;">
+    © 2025 Math Championship: Desafio Colegial. Todos os direitos reservados.
+  </p>
+</footer>
+
+</body>
+</html>
