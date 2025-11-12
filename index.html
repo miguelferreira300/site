@@ -24,6 +24,7 @@
     height: 200px;     /* <<< Você pode mudar este valor (ex: 250px) */
     width: 100%;      /* Ocupa a largura da 'thumbnail' */
     object-fit: contain; /* Recorta a imagem para caber sem distorcer */
+    cursor: pointer;
   }
 
   .codigo-bloco {
@@ -85,7 +86,7 @@
           </div>
 
           <div class="col-sm-4 text-center">          
-            <img src="LIVRE.jpg" 
+            <img src="LIVRE.png" 
                  class="img-responsive" 
                  style="max-width: 80px; margin: 10px auto;">
           </div>
@@ -189,27 +190,27 @@
   <div class="row">
     
     <div class="col-sm-3">
-      <img src="bully.png" class="img-responsive img-circle" 
+      <img src="bully.png" class="img-responsive img-circle"
            style="width:100%; max-width: 300px; margin: 0 auto; border: 6px solid #28a745;" alt="Personagem 1">
-      <p>Caio, o garoto popular da escola.</p>
+      <p class="lead">Caio, O popular da escola, age como o típico "bully" que subestima o protagonista, tratando-o como um novato sem chance. Nesta fase, você enfrentará desafios das quatro operações básicas da matemática.</p>
     </div>
     
     <div class="col-sm-3"> 
       <img src="amigo.png" class="img-responsive img-circle" 
            style="width:100%; max-width: 300px; margin: 0 auto; border: 6px solid #ffe607;" alt="Personagem 2">
-      <p>O melhor amigo do protagonista</p>
+      <p class="lead">Um estudante do segundo ano, ele apoia o protagonista em sua jornada, mas eventualmente o desafia para testar suas habilidades. Você resolverá problemas envolvendo equações de primeiro e segundo grau.</p>
     </div>
     
     <div class="col-sm-3"> 
       <img src="veterano.png" class="img-responsive img-circle" 
            style="width:100%; max-width: 300px; margin: 0 auto; border: 6px solid #ff7b00;" alt="Personagem 3">
-      <p>Victor, é o veterano do protagonista</p>
+      <p class="lead">Victor, Um veterano experiente do terceiro ano e ex-campeão do torneio, que se torna um mentor para o protagonista após ser derrotado. Esta fase testa seu conhecimento em sequências lógicas e potenciação.</p>
     </div>
 
     <div class="col-sm-3"> 
           <img src="nerd.png" class="img-responsive img-circle" 
            style="width:100%; max-width: 300px; margin: 0 auto; border: 6px solid #ff0000;" alt="Personagem 4">
-      <p>Jorge, é o nerd da escola.</p>
+      <p class="lead">Jorge, O gênio bicampeão e grande rival, totalmente dedicado aos estudos e focado em conquistar o título mais uma vez. Aqui, você enfrentará conceitos avançados de funções matemáticas.
     </div>
   
   </div>
@@ -501,7 +502,37 @@ screen quiz_final_screen(questao, alternativas, tempo=40):
   </p>
 </footer>
 
+<div class="modal fade" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="galleryModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <img src="" alt="Imagem da Galeria em Destaque" id="modalImage" class="img-responsive" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  // Quando qualquer imagem com a classe 'gallery-thumb' for clicada
+  $('.gallery-thumb').on('click', function() {
+    
+    // 1. Pega o caminho da imagem que foi clicada (ex: "sala.jpg")
+    var imgSrc = $(this).attr('src');
+    
+    // 2. Coloca esse caminho na imagem que está dentro do modal
+    $('#modalImage').attr('src', imgSrc);
+    
+    // 3. Mostra o modal
+    $('#galleryModal').modal('show');
+  });
+});
+</script>
+
 </body>
 
-</html>
+        </html>
 
